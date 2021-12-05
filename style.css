@@ -1,0 +1,122 @@
+
+:root {
+
+    /* CUSTOM PROPERTIES */
+
+    /* COLORS*/
+    /* Accent */
+    --c-accent: #BCFF05;
+    --c-on-accent: #000000;
+    --c-negative: #FF7E6E;
+    --c-caution: #FFBD3D;
+
+    /* Surface */
+    --c-surface-primary: #000000;
+    --c-surface-secondary: #111418;
+    --c-surface-tertiary: #191C21;
+    --c-surface-quaternary: #262C33;
+
+    /* On surface */
+    --c-on-surface-primary: #FFFFFF;
+    --c-on-surface-primary-variant: #D4DBE2;
+    --c-on-surface-secondary: rgba(212, 219, 226, 0.7);
+    --c-on-surface-tertiary: rgba(212, 219, 226, 0.5);
+    --c-on-surface-quaternary: rgba(212, 219, 226, 0.3);
+
+    /* Surface overlays */
+    --c-over-surface-primary: rgba(212, 219, 226, 0.12);
+    --c-over-surface-secondary: rgba(212, 219, 226, 0.08);
+    --c-over-surface-tertiary: rgba(212, 219, 226, 0.04);
+    --c-modal-overlay: rgba(0, 0, 0, 0.7);
+
+    /* Outline */
+    --c-outline-primary: rgba(212, 219, 226, 0.24);
+    --c-outline-secondary: rgba(212, 219, 226, 0.16);
+    --c-outline-secondary: rgba(212, 219, 226, 0.12);
+}
+
+/* UTILITY CLASSES */
+
+/* LAYOUT */
+.page-container {
+    max-width: 112.8rem;
+    padding: 0 0 4.8rem 0;
+    margin: 0 auto;
+}
+
+/* TYPOGRAPHY */
+.f-one-liner {
+    line-height: 100%;
+}
+
+.f-medium {
+    font-weight: 500;
+}
+
+.f-regular {
+    font-weight: 400;
+}
+
+/* Display */
+.f-display-L {
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.f-display-S {
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+/* Title */
+.f-title-L {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.f-title-M {
+    font-size: 2.0rem;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.f-title-S {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+/* Label */
+.f-label-L {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.f-title-S {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+/* Body */
+.f-body-L {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.f-body-M {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.f-body-S {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 150%;
+}
