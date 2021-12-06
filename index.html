@@ -4,61 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <title>DevFinances | web app</title>
 </head>
 <body>
-    <header>
+    <header class="page-container">
         <img src="#" alt="">
-        <ul>
-            <li>
-                <i>icon</i>
-                Appearance
+        <ul role="list">
+            <li class="f-label-S">
+                Appearance<svg class="icon-chevron-down"><use xlink:href="assets/icons.svg#chevron-down-icon" /></svg>
             </li>
-            <li>
-                <i>icon</i>
-                Data
+            <li class="f-label-S">
+                Data<svg class="icon-chevron-down"><use xlink:href="assets/icons.svg#chevron-down-icon" /></svg>
             </li>
         </ul>
     </header>
-    <main>
-        <section>
-            <div>
-                <h2>Balance</h2>
-                <span>R$ 10,559.75</span>
-                <p>05 transactions</p>
+    <main class="page-container page-content">
+        <section class="stats">
+            <div class="primary-stats">
+                <h2 class="f-title-S">Balance</h2>
+                <span class="f-display-L">R$ 10,559.75</span>
+                <p class="f-body-L f-one-liner">05 transactions</p>
             </div>
-            <div>
-                <div>
-                    <h3><i>icon</i>Income</h3>
-                    <p>R$ 12,230.00</p>
+            <div class="secondary-stats">
+                <div class="secondary-stats__container">
+                    <h3 class="f-label-S secondary-stats__label"><svg class="secondary-stats__icon"><use xlink:href="assets/icons.svg#plus-circle-icon" /></svg>Income</h3>
+                    <p class="f-body-M f-medium f-one-liner">R$ 12,230.00</p>
                 </div>
-                <div>
-                    <h3><i>icon</i>Expenses</h3>
-                    <p>R$ 1,670.25</p>
+                <div class="secondary-stats__container">
+                    <h3 class="f-label-S secondary-stats__label"><svg class="secondary-stats__icon"><use xlink:href="assets/icons.svg#minus-circle-icon" /></svg>Expenses</h3>
+                    <p class="f-body-M f-medium f-one-liner">R$ 1,670.25</p>
                 </div>
             </div>
         </section>
-        <section>
-            <div>
-                <h2>Transactions<span> · All</span></h2>
-                <ul>
-                    <li><button><i>icon</i></button></li>
-                    <li><button><i>icon</i></button></li>
-                    <li><button><i>icon</i></button></li>
+        <section class="transactions">
+            <div class="transactions__top-bar">
+                <h2 class="f-title-M">Transactions<span class="f-title-M f-regular"> · All</span></h2>
+                <ul role="list" class="transactions__actions">
+                    <li><button class="f-label-S"><i>icon</i></button></li>
+                    <li><button class="f-label-S"><i>icon</i></button></li>
+                    <li><button class="f-label-S"><i>icon</i></button></li>
                 </ul>
             </div>
             <div>
                 <div>
-                    <h3><i>icon</i>Title</h3>
-                    <h3><i>icon</i>Date</h3>
-                    <h3><i>icon</i>Amount</h3>
+                    <h3 class="f-title-S"><i>icon</i>Title</h3>
+                    <h3 class="f-title-S"><i>icon</i>Date</h3>
+                    <h3 class="f-title-S"><i>icon</i>Amount</h3>
                 </div>
                 <div>
-                    <p>Site development</p>
-                    <p>Apr 13, 2021</p>
-                    <p><span>+ </span>R$ 12,000.00</p>
+                    <p class="f-body-M f-one-liner">Site development</p>
+                    <p class="f-body-M f-medium f-one-liner">Apr 13, 2021</p>
+                    <p class="f-body-M f-medium f-one-liner"><span>+ </span>R$ 12,000.00</p>
                 </div>
             </div>
         </section>
