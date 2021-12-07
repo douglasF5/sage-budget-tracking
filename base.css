@@ -163,3 +163,9 @@ select {
 .f-regular {
     font-weight: 400;
 }
+
+/* SPACING */
+
+.p-t-4 {
+  padding-top: .4rem;
+}
