@@ -206,10 +206,22 @@ body {
 
 /* TRANSACTIONS TABLE */
 
+.transactions__table div:nth-child(even) {
+    background-color: var(--c-surface-secondary);
+}
+
 .transactions__table-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1.2rem 0;
     color: var(--c-on-surface-secondary);
+}
+
+.transactions__table-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+    color: var(--c-on-surface-primary);
 }
