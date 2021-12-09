@@ -10,13 +10,13 @@
     <title>DevFinances | web app</title>
 </head>
 <body>
-    <header class="page-container">
-        <img src="#" alt="">
-        <ul role="list">
-            <li class="f-label-S">
+    <header class="page-container page-header">
+        <img src="/assets/logo.svg" alt="Logo">
+        <ul role="list" class="page-header__options">
+            <li class="f-label-S button page-header__button">
                 Appearance<svg class="icon-chevron-down"><use xlink:href="assets/icons.svg#chevron-down-icon" /></svg>
             </li>
-            <li class="f-label-S">
+            <li class="f-label-S button page-header__button">
                 Data<svg class="icon-chevron-down"><use xlink:href="assets/icons.svg#chevron-down-icon" /></svg>
             </li>
         </ul>
@@ -25,17 +25,17 @@
         <section class="stats">
             <div class="primary-stats">
                 <h2 class="f-title-S">Balance</h2>
-                <span class="f-display-L">R$ 10,559.75</span>
+                <span class="f-display-L currency-prefix primary-stats__amount">10,559.75</span>
                 <p class="f-body-L f-one-liner">05 transactions</p>
             </div>
             <div class="secondary-stats">
                 <div class="secondary-stats__container">
                     <h3 class="f-label-S secondary-stats__label"><svg class="small-title__icon"><use xlink:href="assets/icons.svg#plus-circle-icon" /></svg>Income</h3>
-                    <p class="f-body-M f-medium f-one-liner">R$ 12,230.00</p>
+                    <p class="f-body-M f-medium f-one-liner currency-prefix secondary-stats__income-amount">12,230.00</p>
                 </div>
                 <div class="secondary-stats__container">
                     <h3 class="f-label-S secondary-stats__label"><svg class="small-title__icon"><use xlink:href="assets/icons.svg#minus-circle-icon" /></svg>Expenses</h3>
-                    <p class="f-body-M f-medium f-one-liner">R$ 1,670.25</p>
+                    <p class="f-body-M f-medium f-one-liner expense-sign secondary-stats__expenses-amount">1,670.25</p>
                 </div>
             </div>
         </section>
@@ -43,8 +43,8 @@
             <div class="transactions__top-bar">
                 <h2 class="f-title-M">Transactions<span class="f-title-M f-regular transactions__title-date"> · All</span></h2>
                 <ul role="list" class="transactions__actions">
-                    <li><button class="f-label-S icon-button transactions__icon-button m-t-4" data-active="true"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#filter-icon" /></svg></button></li>
-                    <li><button class="f-label-S icon-button transactions__icon-button m-t-4" data-active="false"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#sort-desc-icon" /></svg></button></li>
+                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active="false"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#filter-icon" /></svg></button></li>
+                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active="false"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#sort-desc-icon" /></svg></button></li>
                     <li><button class="f-label-S button button--primary">New transaction</button></li>
                 </ul>
             </div>
@@ -57,12 +57,12 @@
                 <div class="transactions__table-row">
                     <p class="f-body-M f-one-liner transactions__title">Site development</p>
                     <p class="f-body-M f-medium f-one-liner transactions__date">Apr 13, 2021</p>
-                    <p class="f-body-M f-medium f-one-liner transactions__amount"><span class="income-sign">+ </span>R$ 12,000.00</p>
+                    <p class="f-body-M f-medium f-one-liner transactions__amount income-sign">12,000.00</p>
                 </div>
                 <div class="transactions__table-row">
-                    <p class="f-body-M f-one-liner">Rent</p>
-                    <p class="f-body-M f-medium f-one-liner">Apr 13, 2021</p>
-                    <p class="f-body-M f-medium f-one-liner"><span class="expensive-sign">- </span>R$ 1,500.00</p>
+                    <p class="f-body-M f-one-liner transactions__title">Rent</p>
+                    <p class="f-body-M f-medium f-one-liner transactions__date">Apr 13, 2021</p>
+                    <p class="f-body-M f-medium f-one-liner transactions__amount expense-sign">1,500.00</p>
                 </div>
             </div>
         </section>
