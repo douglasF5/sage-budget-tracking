@@ -35,7 +35,7 @@
                 </div>
                 <div class="secondary-stats__container">
                     <h3 class="f-label-S secondary-stats__label"><svg class="small-title__icon"><use xlink:href="assets/icons.svg#minus-circle-icon" /></svg>Expenses</h3>
-                    <p class="f-body-M f-medium f-one-liner expense-sign secondary-stats__expenses-amount">1,670.25</p>
+                    <p class="f-body-M f-medium f-one-liner currency-prefix-negative secondary-stats__expenses-amount">1,670.25</p>
                 </div>
             </div>
         </section>
@@ -43,7 +43,7 @@
             <div class="transactions__top-bar">
                 <h2 class="f-title-M">Transactions<span class="f-title-M f-regular transactions__title-date"> · All</span></h2>
                 <ul role="list" class="transactions__actions">
-                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active="false"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#filter-icon" /></svg></button></li>
+                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active="true"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#filter-icon" /></svg></button></li>
                     <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active="false"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#sort-desc-icon" /></svg></button></li>
                     <li><button class="f-label-S button button--primary">New transaction</button></li>
                 </ul>
@@ -57,12 +57,12 @@
                 <div class="transactions__table-row">
                     <p class="f-body-M f-one-liner transactions__title">Site development</p>
                     <p class="f-body-M f-medium f-one-liner transactions__date">Apr 13, 2021</p>
-                    <p class="f-body-M f-medium f-one-liner transactions__amount income-sign">12,000.00</p>
+                    <p class="f-body-M f-medium f-one-liner transactions__amount currency-prefix-positive">12,000.00</p>
                 </div>
                 <div class="transactions__table-row">
                     <p class="f-body-M f-one-liner transactions__title">Rent</p>
                     <p class="f-body-M f-medium f-one-liner transactions__date">Apr 13, 2021</p>
-                    <p class="f-body-M f-medium f-one-liner transactions__amount expense-sign">1,500.00</p>
+                    <p class="f-body-M f-medium f-one-liner transactions__amount currency-prefix-negative">1,500.00</p>
                 </div>
             </div>
         </section>
@@ -70,19 +70,25 @@
             <div class="modal-transactions__content">
                 <div class="modal-transactions__header">
                     <button class="button modal-transactions__close-button"><svg class="modal-transactions__close-button-icon"><use xlink:href="assets/icons.svg#x-icon" /></svg></button>
-                    <button class="f-label-S">Add</button>
+                    <button class="f-label-S button modal-transactions__main-button">Add</button>
                 </div>
                 <div class="modal-transactions__primary-info">
-                    <span class="f-display-S">R$ 0.00</span>
-                    <p class="f-body-L">Transaction title...</p>
+                    <div class="modal-transactions__amount">
+                        <span class="f-display-S currency-prefix modal-transactions__currency-prefix"></span>
+                        <label for=""></label>
+                        <input type="text" class="f-display-S modal-transactions__amount-field" placeholder="0.00">
+                    </div>
+                    <input class="f-body-L modal-transactions__title-field" placeholder="Transaction title...">
                 </div>
                 <div class="modal-transactions__secondary-info">
-                    <div>
-                        <label for=""></label>
+                    <div class="modal-transactions__type">
+                        <label for="" class="f-title-S modal-transactions__field-label">
+                        <svg class="small-title__icon"><use xlink:href="assets/icons.svg#dollarsign-circle-icon" /></svg>
+                        Type</label>
                         <input type="text">
                     </div>
-                    <div>
-                        <label for=""></label>
+                    <div class="modal-transactions__date">
+                        <label for="" class="f-title-S modal-transactions__field-label">When</label>
                         <input type="text">
                     </div>
                 </div>
