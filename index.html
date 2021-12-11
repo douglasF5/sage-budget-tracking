@@ -43,8 +43,8 @@
             <div class="transactions__top-bar">
                 <h2 class="f-title-M">Transactions<span class="f-title-M f-regular transactions__title-date"> · All</span></h2>
                 <ul role="list" class="transactions__actions">
-                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active="true"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#filter-icon" /></svg></button></li>
-                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active="false"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#sort-desc-icon" /></svg></button></li>
+                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#filter-icon" /></svg></button></li>
+                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#sort-desc-icon" /></svg></button></li>
                     <li><button class="f-label-S button button--primary">New transaction</button></li>
                 </ul>
             </div>
@@ -74,24 +74,30 @@
                 </div>
                 <div class="modal-transactions__primary-info">
                     <div class="modal-transactions__amount">
-                        <span class="f-display-S currency-prefix modal-transactions__currency-prefix"></span>
-                        <label for=""></label>
-                        <input type="text" class="f-display-S modal-transactions__amount-field" placeholder="0.00">
+                        <label for="amount-field" class="f-display-S currency-prefix modal-transactions__currency-prefix"></label>
+                        <input type="number" id="amount-field" class="f-display-S modal-transactions__amount-field" placeholder="0.00" autofocus>
                     </div>
-                    <input class="f-body-L modal-transactions__title-field" placeholder="Transaction title...">
+                    <div role="textbox" aria-placeholder="Transaction title..." contenteditable="true" placeholder="Transaction title..." class="f-body-L modal-transactions__title-field"></div>
                 </div>
                 <div class="modal-transactions__secondary-info">
                     <div class="modal-transactions__type">
-                        <label for="" class="f-title-S modal-transactions__field-label">
+                        <label for="type-field" class="f-title-S modal-transactions__field-label">
                         <svg class="small-title__icon"><use xlink:href="assets/icons.svg#dollarsign-circle-icon" /></svg>
                         Type</label>
-                        <input type="text">
+                        <select id="type-field" class="f-label-S modal-transactions__type-field">
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
+                        </select>
                     </div>
                     <div class="modal-transactions__date">
-                        <label for="" class="f-title-S modal-transactions__field-label">When</label>
-                        <input type="text">
+                        <label for="date-field" class="f-title-S modal-transactions__field-label">
+                        <svg class="small-title__icon"><use xlink:href="assets/icons.svg#calendar-icon" /></svg>
+                        When</label>
+                        <input type="date" id="date-field" class="f-label-S modal-transactions__date-field">
                     </div>
                 </div>
+                <p class="f-body-M f-one-liner modal-transactions__warning-message">Please, fill out all fields!</p>
+                <button class="f-label-S button modal-transactions__delete-button">Delete</button>
             </div>
         </div>
     </main>

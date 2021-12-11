@@ -236,7 +236,7 @@ body {
     background-color: var(--c-over-surface-secondary);
 }
 
-.transactions__icon-button[data-active="true"]:after {
+.transactions__icon-button[data-active]:after {
     content: "";
     position: absolute;
     top: .6rem;
@@ -254,7 +254,7 @@ body {
     fill: var(--c-on-surface-secondary);
 }
 
-.transactions__icon-button[data-active="true"] > .transactions__button-icon {
+.transactions__icon-button[data-active] > .transactions__button-icon {
     fill: var(--c-on-surface-primary-variant);
 }
 
@@ -355,7 +355,7 @@ body {
     flex-direction: column;
     gap: 2.4rem;
     max-width: 27.2rem;
-    padding-top: 2.4rem;
+    padding-top: 1.6rem;
     margin: 10.6rem auto;
     border-radius: 1.6rem;
     border: solid 1px var(--c-outline-tertiary);
@@ -423,6 +423,14 @@ body {
     outline: none;
     color: var(--c-on-surface-primary);
     background-color: transparent;
+    caret-color: var(--c-accent);
+    cursor: text;
+}
+
+.modal-transactions__title-field[contenteditable=true]:empty:before{
+    content: attr(aria-placeholder);
+    display: block;  /*For Firefox*/
+    color: var(--c-on-surface-tertiary);;
 }
 
 .modal-transactions__amount-field::placeholder {
@@ -437,6 +445,10 @@ body {
     border-top: solid 1px var(--c-outline-tertiary);
 }
 
+/* .modal-transactions__date {
+    border-bottom: solid 1px var(--c-outline-tertiary);
+} */
+
 .modal-transactions__field-label {
     color: var(--c-on-surface-secondary);
 }
@@ -447,4 +459,51 @@ body {
     margin-right: .4rem;
     vertical-align: top;
     fill: var(--c-on-surface-secondary);
+}
+
+.modal-transactions__type-field, .modal-transactions__date-field {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    color: var(--c-on-surface-primary);
+    background-color: var(--c-surface-secondary);
+    caret-color: var(--c-accent);
+}
+
+.modal-transactions__date-field {
+    position: relative;
+    right: -1.5rem;
+}
+
+::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: -3rem;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    fill: var(--c-accent);
+    opacity: 0;
+}
+
+.modal-transactions__warning-message {
+    margin: 0 2rem;
+    text-align: left;
+    color: var(--c-caution);
+    display: none;
+}
+
+.modal-transactions__delete-button {
+    padding: .6rem 1.2rem;
+    margin-bottom: 1.6rem;
+    border-radius: 2.4rem;
+    align-self: center;
+    color: var(--c-on-surface-primary-variant);
+    background-color: var(--c-surface-quaternary);
+    display: none;
+}
+
+.modal-transactions__delete-button:hover {
+    background-color: var(--c-surface-tertiary);
 }
