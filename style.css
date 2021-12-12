@@ -350,6 +350,10 @@ body {
     background-color: var(--c-modal-overlay);
 }
 
+.modal-transactions__overlay[data-hidden] {
+    display: none;
+}
+
 .modal-transactions__content {
     display: flex;
     flex-direction: column;
