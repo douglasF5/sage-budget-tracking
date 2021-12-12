@@ -45,7 +45,7 @@
                 <ul role="list" class="transactions__actions">
                     <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#filter-icon" /></svg></button></li>
                     <li><button class="f-label-S icon-button transactions__icon-button p-t-4"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#sort-desc-icon" /></svg></button></li>
-                    <li><button class="f-label-S button button--primary">New transaction</button></li>
+                    <li><button id="newTransactionButton" class="f-label-S button button--primary">New transaction</button></li>
                 </ul>
             </div>
             <div class="transactions__table">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </section>
-        <div class="modal-transactions__overlay">
+        <div class="modal-transactions__overlay" data-hidden>
             <div class="modal-transactions__content">
                 <div class="modal-transactions__header">
                     <button class="button modal-transactions__close-button"><svg class="modal-transactions__close-button-icon"><use xlink:href="assets/icons.svg#x-icon" /></svg></button>
