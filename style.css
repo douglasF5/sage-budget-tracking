@@ -414,6 +414,12 @@ body {
     color: var(--c-on-surface-quaternary);
 }
 
+.modal-transactions__currency-prefix.currency-prefix-negative::before {
+    content: '-R$';
+    margin-right: .25em;
+    white-space: nowrap;
+}
+
 .modal-transactions__amount {
     display: flex;
     align-items: center;
