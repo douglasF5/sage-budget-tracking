@@ -12,6 +12,12 @@ closeModalButton.onclick = () => {
     transactionsModal.toggleAttribute('data-hidden');
 };
 
+window.onclick = (event) => {
+    if(event.target == transactionsModal) {
+        transactionsModal.toggleAttribute('data-hidden');
+    }
+  }
+
 // TOGGLE CURRENCY PREFIX IN THE TRANSACTION MODAL
 const modalTypeField = document.querySelector('.modal-transactions__type-field');
 
