@@ -110,12 +110,6 @@ body {
     padding-top: .4rem;
 }
 
-.currency-prefix::before {
-    content: 'R$';
-    margin-right: .25em;
-    white-space: nowrap;
-}
-
 .secondary-stats__income-amount {
     color: var(--c-accent);
 }
@@ -260,7 +254,7 @@ body {
 
 /* TRANSACTIONS TABLE */
 
-.transactions__table div:nth-child(even) {
+.transactions__table-rows-wrapper div:nth-child(odd) {
     background-color: var(--c-surface-secondary);
 }
 
@@ -300,7 +294,7 @@ body {
   }
 
 .transactions__table-row:hover::after {
-    background-color: var(--c-over-surface-secondary);
+    background-color: var(--c-over-surface-tertiary);
 }
 
 .transactions__title {
@@ -315,25 +309,19 @@ body {
 .transactions__amount {
     grid-area: amount;
     text-align: right;
-}
-
-.currency-prefix-positive::before {
-    content: '+ R$';
-    margin-right: .25em;
     white-space: nowrap;
 }
 
-.transactions__amount.currency-prefix-positive::first-letter {
+.plus-prefix::before {
+    content: '+';
+    white-space: nowrap;
+}
+
+.transactions__amount.plus-prefix::first-letter {
     color: var(--c-accent);
 }
 
-.currency-prefix-negative::before {
-    content: '- R$';
-    margin-right: .25em;
-    white-space: nowrap;
-}
-
-.transactions__amount.currency-prefix-negative::first-letter {
+.minus-prefix::first-letter {
     color: var(--c-negative);
 }
 
@@ -410,14 +398,23 @@ body {
     padding: 0 2rem;
 }
 
-.modal-transactions__currency-prefix {
+.modal-transactions__currency-prefix,
+.modal-transactions__currency-prefix-negative {
     color: var(--c-on-surface-quaternary);
 }
 
-.modal-transactions__currency-prefix.currency-prefix-negative::before {
-    content: '-R$';
+.modal-transactions__currency-prefix::before,
+.modal-transactions__currency-prefix-negative::before {
     margin-right: .25em;
     white-space: nowrap;
+}
+
+.modal-transactions__currency-prefix::before {
+    content: 'R$';
+}
+
+.modal-transactions__currency-prefix-negative::before {
+    content: '-R$';
 }
 
 .modal-transactions__amount {
@@ -454,10 +451,6 @@ body {
     padding: 1.2rem 2rem;
     border-top: solid 1px var(--c-outline-tertiary);
 }
-
-/* .modal-transactions__date {
-    border-bottom: solid 1px var(--c-outline-tertiary);
-} */
 
 .modal-transactions__field-label {
     color: var(--c-on-surface-secondary);
