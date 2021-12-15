@@ -54,15 +54,7 @@
                     <h3 class="f-title-S"><svg class="small-title__icon"><use xlink:href="assets/icons.svg#calendar-icon" /></svg>Date</h3>
                     <h3 class="f-title-S"><svg class="small-title__icon"><use xlink:href="assets/icons.svg#hash-icon" /></svg>Amount</h3>
                 </div>
-                <div class="transactions__table-row">
-                    <p class="f-body-M f-one-liner transactions__title">Site development</p>
-                    <p class="f-body-M f-medium f-one-liner transactions__date">Apr 13, 2021</p>
-                    <p class="f-body-M f-medium f-one-liner transactions__amount currency-prefix-positive">12,000.00</p>
-                </div>
-                <div class="transactions__table-row">
-                    <p class="f-body-M f-one-liner transactions__title">Rent</p>
-                    <p class="f-body-M f-medium f-one-liner transactions__date">Apr 13, 2021</p>
-                    <p class="f-body-M f-medium f-one-liner transactions__amount currency-prefix-negative">1,500.00</p>
+                <div class="transactions__table-rows-wrapper">
                 </div>
             </div>
         </section>
@@ -74,7 +66,7 @@
                 </div>
                 <div class="modal-transactions__primary-info">
                     <div class="modal-transactions__amount">
-                        <label for="amount-field" class="f-display-S currency-prefix modal-transactions__currency-prefix"></label>
+                        <label id="amountFieldLabel" for="amount-field" class="f-display-S modal-transactions__currency-prefix"></label>
                         <input type="number" id="amount-field" class="f-display-S modal-transactions__amount-field" placeholder="0.00" autofocus>
                     </div>
                     <div role="textbox" aria-placeholder="Transaction title..." contenteditable="true" placeholder="Transaction title..." class="f-body-L modal-transactions__title-field"></div>
