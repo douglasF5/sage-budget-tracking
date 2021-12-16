@@ -43,7 +43,7 @@ modalTypeField.onchange = () => {
     }
 };
 
-// SETTING UP TRANSACTIONS
+// SET UP TRANSACTIONS
 const transactions = [
     {
         id: 1,
@@ -63,19 +63,49 @@ const transactions = [
         date: '06/01/2021',
         amount: -5590,
     },
+    {
+        id: 4,
+        title: 'Groceries',
+        date: '06/01/2021',
+        amount: -12000,
+    },
+    {
+        id: 5,
+        title: 'Netflix subscription',
+        date: '06/01/2021',
+        amount: 23000,
+    },
+    {
+        id: 1,
+        title: 'Site development',
+        date: '04/13/2021',
+        amount: 1200000,
+    },
+    {
+        id: 2,
+        title: 'Rent',
+        date: '04/13/2021',
+        amount: -150000,
+    },
+    {
+        id: 3,
+        title: 'Netflix subscription',
+        date: '06/01/2021',
+        amount: -5590,
+    },
+    {
+        id: 4,
+        title: 'Groceries',
+        date: '06/01/2021',
+        amount: -12000,
+    },
+    {
+        id: 5,
+        title: 'Netflix subscription',
+        date: '06/01/2021',
+        amount: 23000,
+    },
 ];
-
-const stats = {
-    income() {
-        //code goes here...
-    },
-    expenses(){
-        //code goes here...
-    },
-    balance(){
-        //code goes here...
-    }
-};
 
 // ADD TRANSACTIONS
 const transactionsRowsWrapper = document.querySelector('.transactions__table-rows-wrapper');
@@ -113,7 +143,7 @@ function formatCurrency(amount) {
         currency: "BRL",
     });
 
-    return `${sign} ${amount}`;
+    return `${sign} ${amount.replace('R$', 'R$ ')}`;
 }
 
 // FORMAT DATE
@@ -142,3 +172,50 @@ function numberToMonth(monthNum) {
 
     return monthsMMM[monthNum];
 }
+
+// CALCULATE STATS
+let stats = {
+    balance: 0,
+    transactions: 0,
+    income: 0,
+    expenses: 0,
+};
+
+stats.balance = transactions.reduce((acc, cur) => {
+    return acc + cur.amount;
+}, 0);
+
+stats.transactions = transactions.length;
+
+stats.income = transactions.reduce((acc, cur) => {
+    if(cur.amount > 0) {
+        return acc + cur.amount;
+    } else {
+        return acc + 0;
+    }
+}, 0);
+
+stats.expenses = transactions.reduce((acc, cur) => {
+    if(cur.amount < 0) {
+        return acc + cur.amount;
+    } else {
+        return acc + 0;
+    }
+}, 0);
+
+// UPDATE STATS ON UI
+const balance = document.querySelector('.primary-stats__amount');
+balance.innerText = formatCurrency(stats.balance);
+
+const transactionsCount = document.querySelector('#transactionsCount');
+if(stats.transactions > 0) {
+    transactionsCount.innerText =  stats.transactions < 9 ? '0' + stats.transactions + ' transactions' : stats.transactions + ' transactions';
+} else {
+    transactionsCount.innerText = 'No transactions';
+}
+
+const income = document.querySelector('.secondary-stats__income-amount');
+income.innerText = formatCurrency(stats.income);
+
+const expenses = document.querySelector('.secondary-stats__expenses-amount');
+expenses.innerText = formatCurrency(stats.expenses);
