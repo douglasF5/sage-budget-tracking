@@ -436,7 +436,7 @@ body {
 
 .modal-transactions__title-field[contenteditable=true]:empty:before{
     content: attr(aria-placeholder);
-    display: block;  /*For Firefox*/
+    display: block;
     color: var(--c-on-surface-tertiary);;
 }
 
@@ -476,18 +476,31 @@ body {
 
 .modal-transactions__date-field {
     position: relative;
-    right: -1.5rem;
+    right: -0.1rem;
 }
 
 ::-webkit-calendar-picker-indicator {
     position: absolute;
     top: 0;
-    left: -3rem;
-    width: 100%;
-    height: 100%;
+    right: 0;
     background-color: white;
     fill: var(--c-accent);
     opacity: 0;
+}
+
+.modal-transactions__date-field::after {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	top: .1rem;
+	right: .6rem;
+	height: .65rem;
+	width: .65rem;
+	border-style: solid;
+	border-width: 0.2rem 0.2rem 0 0;
+	transform: rotate(135deg);
+	vertical-align: top;
+    pointer-events: none;
 }
 
 .modal-transactions__warning-message {
