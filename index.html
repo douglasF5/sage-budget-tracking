@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="style.css">
-    <script type="module" defer src="script.js"></script>
+    <script type="module" defer src="main.js"></script>
     <title>DevFinances | web app</title>
 </head>
 <body>
@@ -44,7 +44,7 @@
                 <h2 class="f-title-M">Transactions<span class="f-title-M f-regular transactions__title-date"> · All</span></h2>
                 <ul role="list" class="transactions__actions">
                     <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#filter-icon" /></svg></button></li>
-                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#sort-desc-icon" /></svg></button></li>
+                    <li><button id="sortButton" class="f-label-S icon-button transactions__icon-button p-t-4"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#sort-desc-icon" /></svg></button></li>
                     <li><button id="newTransactionButton" class="f-label-S button button--primary">New transaction</button></li>
                 </ul>
             </div>
@@ -54,8 +54,7 @@
                     <h3 class="f-title-S"><svg class="small-title__icon"><use xlink:href="assets/icons.svg#calendar-icon" /></svg>Date</h3>
                     <h3 class="f-title-S"><svg class="small-title__icon"><use xlink:href="assets/icons.svg#hash-icon" /></svg>Amount</h3>
                 </div>
-                <div class="transactions__table-rows-wrapper">
-                </div>
+                <div class="transactions__table-rows-wrapper"></div>
             </div>
         </section>
         <div class="modal-transactions__overlay" data-hidden>
