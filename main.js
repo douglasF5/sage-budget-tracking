@@ -6,6 +6,8 @@ const transactionsModalOverlay = document.querySelector('.modal-transactions__ov
 
 const closeModalButton = document.querySelector('.modal-transactions__close-button');
 
+const newTransactionButton = document.querySelector('#newTransactionButton');
+
 newTransactionButton.onclick = () => {
     transactionsModalOverlay.toggleAttribute('data-hidden');
 };
@@ -31,7 +33,19 @@ const modalTypeField = document.querySelector('.modal-transactions__type-field')
 
 const modalCurrencyPrefix = document.querySelector('#amountFieldLabel');
 
+const amountField = document.getElementById('amount-field');
+
+amountField.oninput = () => {
+    if(amountField.value !== '') {
+        modalCurrencyPrefix.classList.add('lit');
+    } else {
+        modalCurrencyPrefix.classList.remove('lit');
+    }
+}
+
+
 modalTypeField.onchange = () => {
+
     if(modalTypeField.value == "Expense") {
         if(modalCurrencyPrefix.classList.contains('modal-transactions__currency-prefix')) {
             modalCurrencyPrefix.classList.replace('modal-transactions__currency-prefix', 'modal-transactions__currency-prefix-negative');
@@ -131,12 +145,25 @@ createTransaction({
     amount: 550,
 });
 
-const editButton = document.getElementById('sortButton');
+// DELETE TRANSACTIONS
+const editButton = document.getElementById('editTransactionButton');
 const cellWrappers = document.querySelectorAll('.transactions__cell-wrapper');
 
 editButton.onclick = () => {
+
+    if(editButton.innerText === 'Edit') {
+        editButton.innerText = 'Done';
+        newTransactionButton.disabled = true;
+    } else {
+        editButton.innerText = 'Edit';
+        newTransactionButton.disabled = false;
+    }
+
     for(let element of cellWrappers) {
         element.toggleAttribute('data-visible');
     }
 }
 
+
+const el = document.querySelector('.transactions__table-rows-wrapper').children;
+// Check this article to know more about how to get the index of elements from an array -> https://stackoverflow.com/questions/11761881/javascript-dom-find-element-index-in-container
