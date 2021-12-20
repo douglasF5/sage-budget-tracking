@@ -41,10 +41,9 @@
         </section>
         <section class="transactions">
             <div class="transactions__top-bar">
-                <h2 class="f-title-M">Transactions<span class="f-title-M f-regular transactions__title-date"> · All</span></h2>
+                <h2 class="f-title-M">Transactions</h2>
                 <ul role="list" class="transactions__actions">
-                    <li><button class="f-label-S icon-button transactions__icon-button p-t-4" data-active><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#filter-icon" /></svg></button></li>
-                    <li><button id="sortButton" class="f-label-S icon-button transactions__icon-button p-t-4"><svg class="transactions__button-icon"><use xlink:href="assets/icons.svg#sort-desc-icon" /></svg></button></li>
+                    <li><button id="editTransactionButton" class="f-label-S button button--secondary">Edit</button></li>
                     <li><button id="newTransactionButton" class="f-label-S button button--primary">New transaction</button></li>
                 </ul>
             </div>
@@ -88,7 +87,6 @@
                     </div>
                 </div>
                 <p class="f-body-M f-one-liner modal-transactions__warning-message">Please, fill out all fields!</p>
-                <button class="f-label-S button modal-transactions__delete-button">Delete</button>
             </div>
         </div>
     </main>
