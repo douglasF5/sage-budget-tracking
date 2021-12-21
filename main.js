@@ -131,6 +131,12 @@ function createTransaction(transactionData) {
     updateStats(allTransactions);
 }
 
+function deleteTransaction(index, element) {
+    allTransactions.splice(index, 1);
+    element.remove();
+    updateStats(allTransactions);
+}
+
 createTransaction({
     id: 6,
     title: 'Test',
@@ -147,9 +153,12 @@ createTransaction({
 
 // DELETE TRANSACTIONS
 const editButton = document.getElementById('editTransactionButton');
+const editButtonWrapper = editButton.closest('li');
 const cellWrappers = document.querySelectorAll('.transactions__cell-wrapper');
 
-editButton.onclick = () => {
+console.log(editButtonWrapper);
+
+editButtonWrapper.onclick = () => {
 
     if(editButton.innerText === 'Edit') {
         editButton.innerText = 'Done';
@@ -165,5 +174,18 @@ editButton.onclick = () => {
 }
 
 
-const el = document.querySelector('.transactions__table-rows-wrapper').children;
-// Check this article to know more about how to get the index of elements from an array -> https://stackoverflow.com/questions/11761881/javascript-dom-find-element-index-in-container
+const tableRowsWrapper = document.querySelector('.transactions__table-rows-wrapper').children;
+
+const deleteButtons = document.getElementsByClassName('transactions__delete-button');
+
+Object.values(deleteButtons).forEach(button => {
+    button.addEventListener('click', () => {
+        const row = button.closest('div.transactions__table-row');
+        deleteTransaction(getElementKey(tableRowsWrapper, row), row);
+    });
+});
+
+function getElementKey(object, value) {
+    const key = Object.keys(object).find(key => object[key] === value);
+    return key;
+}
