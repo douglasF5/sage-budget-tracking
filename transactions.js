@@ -1,12 +1,25 @@
 import { formatDate, formatCurrency } from "./utils.js";
+import { updateStatsOnUI } from "./stats.js";
+import { allTransactions } from "./main.js";
 
+// TRANSACTION ELEMENTS
+const newTransactionButton = document.querySelector('#newTransactionButton');
+const newTransactionButtonWrapper = document.querySelector('#newTransactionButtonWrapper');
+const editButton = document.getElementById('editTransactionButton');
+const editButtonWrapper = document.getElementById('editTransactionButtonWrapper');
 const transactionsRowsWrapper = document.querySelector('.transactions__table-rows-wrapper');
+let deleteButtons = document.getElementsByClassName('transactions__delete-button');
 
-// LIST TRANSACTIONS ON UI
-function listTransaction(transaction, index) {
+const transactionElements = {
+    newTransactionButtonWrapper,
+    editButtonWrapper,
+};
+
+// RENDER TRANSACTION ON UI
+function renderTransaction(transactionData) {
     const transactionRow = document.createElement('div');
     transactionRow.classList.add('transactions__table-row');
-    transactionRow.innerHTML = transactionInnerHTML(transaction);
+    transactionRow.innerHTML = transactionInnerHTML(transactionData);
     transactionsRowsWrapper.appendChild(transactionRow);
 }
 
@@ -23,17 +36,58 @@ function transactionInnerHTML(transaction) {
     return transactionRowTemplate;
 }
 
-function listAllTransactions(transactionsData) {
-    transactionsData.forEach(transaction => listTransaction(transaction));
+// RENDER ALL TRANSACTIONS ON UI
+function renderAllTransactions(transactionsData) {
+    transactionsData.forEach(transaction => renderTransaction(transaction));
 }
 
+// CREATE TRANSACTION
+function createTransaction(transactionData, transactionsData) {
+    transactionsData.push(transactionData);
+    renderTransaction(transactionData);
+    updateStatsOnUI(transactionsData);
+}
+
+// TOGGLE DELETE MODE
+function toggleDeleteMode() {
+    if(editButton.innerText === 'Edit') {
+        editButton.innerText = 'Done';
+        newTransactionButton.disabled = true;
+    } else {
+        editButton.innerText = 'Edit';
+        newTransactionButton.disabled = false;
+    }
+
+    const cellWrappers = document.querySelectorAll('.transactions__cell-wrapper');
+
+    for(let element of cellWrappers) {
+        element.toggleAttribute('data-visible');
+    }
+
+    deleteButtons = document.getElementsByClassName('transactions__delete-button');
+    
+    Object.values(deleteButtons).forEach(button => {
+        button.addEventListener('click', () => {clearTransaction(button, allTransactions)});
+    });
+}
+
+// CLEAR TRANSACTION
+function clearTransaction(trigger, transactionsData) {
+    const row = trigger.closest('div.transactions__table-row');
+    const rowIndex = getElementKey(transactionsRowsWrapper.children, row);
+    transactionsData.splice(rowIndex, 1);
+    row.remove();
+    updateStatsOnUI(transactionsData);
+}
+
+function getElementKey(object, value) {
+    const key = Object.keys(object).find(key => object[key] === value);
+    return key;
+}
+
+// CLEAR ALL TRANSACTIONS
 function clearAllTransactions() {
     transactionsRowsWrapper.innerHTML = '';
 }
 
-// ADD A NEW TRANSACTION
-function addTransaction(transactionData, transactionsData) {
-    transactionsData.push(transactionData);
-}
-
-export { addTransaction, listAllTransactions, clearAllTransactions };
+export { transactionElements, createTransaction, clearTransaction, renderAllTransactions, clearAllTransactions, toggleDeleteMode };
