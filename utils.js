@@ -38,4 +38,9 @@ function formatCurrency(amount) {
     return `${sign} ${amount.replace('R$', 'R$ ')}`;
 }
 
-export { formatDate, formatCurrency };
+//CHECK WHAT ELEMENT IS BEING CLICKED
+function showClickedElement() {
+    window.addEventListener('click', e => console.log(e.target));
+}
+
+export { formatDate, formatCurrency, showClickedElement };
