@@ -35,19 +35,20 @@ function calculateStats(transactionsData) {
 }
 
 // UPDATE STATS ON UI
-function updateStats(transactionsData) {
+function updateStatsOnUI(transactionsData) {
 
     const stats = calculateStats(transactionsData);
 
     const balance = document.querySelector('.primary-stats__amount');
+    stats.balance < 0 ? balance.classList.add('negative') : balance.classList.remove('negative');
     balance.innerText = formatCurrency(stats.balance);
 
     const transactionsCount = document.querySelector('#transactionsCount');
     if(stats.count > 0) {
-        transactionsCount.innerText =  stats.count < 9 ? '0' + stats.count + ' transactions' : stats.count + ' transactions';
+        transactionsCount.innerText =  stats.count < 10 ? '0' + stats.count + ' transactions' : stats.count + ' transactions';
     } else {
         transactionsCount.innerText = 'No transactions';
-}
+    }
     const income = document.querySelector('.secondary-stats__income-amount');
     income.innerText = formatCurrency(stats.income);
 
@@ -55,4 +56,4 @@ function updateStats(transactionsData) {
     expenses.innerText = formatCurrency(stats.expenses);
 }
 
-export { updateStats };
+export { updateStatsOnUI };
