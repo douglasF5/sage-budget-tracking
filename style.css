@@ -100,17 +100,9 @@ body {
 .stats {
     display: flex;
     flex-direction: column;
-    min-width: 20.5rem;
+    flex: 0 0 22rem;
     gap: 2.4rem;
     padding-top: .4rem;
-}
-
-.secondary-stats__income-amount {
-    color: var(--c-accent);
-}
-
-.secondary-stats__expenses-amount {
-    color: var(--c-negative);
 }
 
 .primary-stats {
@@ -125,6 +117,10 @@ body {
     color: var(--c-on-surface-primary);
 }
 
+.primary-stats__amount.negative {
+    color: var(--c-negative);
+}
+
 .secondary-stats {
     display: flex;
     flex-direction: column;
@@ -137,6 +133,14 @@ body {
     align-items: center;
     border-top: solid 1px var(--c-outline-secondary);
     padding-top: 1.2rem;
+}
+
+.secondary-stats__income-amount {
+    color: var(--c-accent);
+}
+
+.secondary-stats__expenses-amount {
+    color: var(--c-negative);
 }
 
 .small-title__icon {
@@ -195,6 +199,10 @@ body {
     transform: translateY(0.2rem);
 }
 
+.button:focus-visible, .icon-button:focus-visible {
+    outline: solid 4px hsla(76, 100%, 100%, .16);
+}
+
 .icon-button {
     width: 3.6rem;
     height: 3.6rem;
@@ -219,6 +227,7 @@ body {
 }
 
 .button--secondary {
+    box-sizing: border-box;
     padding: .6rem 1.2rem;
     border-radius: 2.4rem;
     color: var(--c-accent);
@@ -465,6 +474,10 @@ body {
     border-top: solid 1px var(--c-outline-tertiary);
 }
 
+.modal-transactions__type:focus-within, .modal-transactions__date:focus-within {
+    background-color: var(--c-surface-tertiary);
+}
+
 .modal-transactions__field-label {
     color: var(--c-on-surface-secondary);
 }
@@ -487,10 +500,15 @@ body {
     caret-color: var(--c-accent);
 }
 
+.modal-transactions__type-field:focus-visible, .modal-transactions__date-field:focus-visible {
+    background-color: var(--c-surface-tertiary);
+}
+
 .modal-transactions__date-field {
     position: relative;
     right: -0.1rem;
 }
+
 
 ::-webkit-calendar-picker-indicator {
     position: absolute;
