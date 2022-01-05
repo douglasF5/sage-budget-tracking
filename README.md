@@ -1,10 +1,10 @@
 # Mini finance web app
 
-In this project an interactive page was developed using **HTML**, **CSS** and **JavaScript** for building the page and its functionality, and the **Web Storage API** for storing transactions and user preferences.
+In this project, an interactive page was developed using **HTML**, **CSS** and **JavaScript** - for building the page and its functionality, - and the **Web Storage API** for storing transactions and user preferences.
 
-These are the implemented features:
+## Features overview:
 
-## Transactions creation
+### **Transactions creation**
 
 Add new transactions through a simple and clean UI.
 
@@ -12,7 +12,7 @@ Add new transactions through a simple and clean UI.
 
 <br>
 
-## Transactions deletion
+### **Transactions deletion**
 
 Turn on the deletion mode to see controls for removing individual transactions.
 
@@ -20,7 +20,7 @@ Turn on the deletion mode to see controls for removing individual transactions.
 
 <br>
 
-## Simple summary measurements
+### **Simple summary measurements**
 
 Simple aggregate data calculated automatically based on created transactions.
 
@@ -28,7 +28,7 @@ Simple aggregate data calculated automatically based on created transactions.
 
 <br>
 
-## UI theming
+### **UI theming**
 
 Light and dark UI implemented by leveraging CSS custom properties and DOM manipulation using JavaScript.
 
@@ -36,7 +36,7 @@ Light and dark UI implemented by leveraging CSS custom properties and DOM manipu
 
 <br>
 
-## Responsive layout
+### **Responsive layout**
 
 With the power of CSS layout features page components have their style, size, position and visibility changed in order to better adapt to different screen sizes.
 
@@ -48,4 +48,4 @@ With the power of CSS layout features page components have their style, size, po
 
 - As a beginner exercise, this project wasn’t focused on advanced optimizations regarding data storage, processing, accessibility, scalability, cross-browser compatibility, etc. There’s still a lot to be done about it.
 - This project was proposed by Rocketseat during one of their free courses.
-- The UI was redesigned based on this one provided by Rocketseat. Feel free to check the original as well as my version of it here.
+- The UI was completely redesigned for this exercise.
