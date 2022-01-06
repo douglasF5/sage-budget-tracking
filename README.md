@@ -1,4 +1,4 @@
-# Mini budget tracker web app
+# Mini budget tracking web app
 
 In this project, an interactive page was developed using **HTML**, **CSS** and **JavaScript** - for building the page and its functionality, - and the **Web Storage API** for storing transactions and user preferences.
 
