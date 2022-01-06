@@ -49,3 +49,4 @@ With the power of CSS layout features page components have their style, size, po
 - As a beginner exercise, this project wasn’t focused on advanced optimizations regarding data storage, processing, accessibility, scalability, cross-browser compatibility, etc. There’s still a lot to be done about it.
 - This project was proposed by Rocketseat during one of their free courses.
 - The UI was completely redesigned for this exercise.
+- As most projects, this one is not bug/error-free. If you find something wrong and want to share it with me, feel free to do so around here or via email - dfaferreira46@gmail.com
