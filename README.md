@@ -1,6 +1,6 @@
 # Mini budget tracking web app
 
-In this project, an interactive page was developed using **HTML**, **CSS** and **JavaScript** - for building the page and its functionality, - and the **Web Storage API** for storing transactions and user preferences.
+In this project, an interactive page was developed using **HTML**, **CSS** and **JavaScript** - for building the page and its functionality, - and the **Web Storage API** for storing transactions and user preferences data.
 
 ## Features overview:
 
@@ -22,7 +22,7 @@ Turn on the deletion mode to see controls for removing individual transactions.
 
 ### **Simple summary measurements**
 
-Simple aggregate data calculated automatically based on created transactions.
+Stats calculated automatically based on created transactions.
 
 <img src=".github/simple-summary-measurements.png">
 
