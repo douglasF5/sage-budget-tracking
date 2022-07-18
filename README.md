@@ -1,4 +1,4 @@
-# Mini budget tracking web app
+# Sage budget tracking web app
 
 In this project, an interactive page was developed using **HTML**, **CSS** and **JavaScript** - for building the page and its functionality, - and the **Web Storage API** for storing transactions and user preferences data. [Interact with the live project here](https://douglasf5.github.io/mini-budget-tracking-web-app/).
 
