@@ -1,6 +1,6 @@
 # Sage budget tracking web app
 
-In this project, an interactive page was developed using **HTML**, **CSS** and **JavaScript** - for building the page and its functionality, - and the **Web Storage API** for storing transactions and user preferences data. [Interact with the live project here](https://douglasf5.github.io/mini-budget-tracking-web-app/).
+In this project, an interactive page was developed using **HTML**, **CSS**, and **JavaScript** - for building the page and its functionality, - and the **Web Storage API** for storing transactions and user preferences data. [Interact with the live project here](https://douglasf5.github.io/mini-budget-tracking-web-app/).
 
 ## Features overview:
 
@@ -22,7 +22,7 @@ Turn on the deletion mode to see controls for removing individual transactions.
 
 ### **Simple data summary**
 
-Stats calculated automatically based on created transactions.
+Stats are calculated automatically based on created transactions.
 
 <img src=".github/simple-summary-measurements.png">
 
@@ -38,7 +38,7 @@ Light and dark UI implemented by leveraging CSS custom properties and DOM manipu
 
 ### **Responsive layout**
 
-With the power of CSS layout features page components have their style, size, position and visibility changed in order to better adapt to different screen sizes.
+With the power of CSS layout features page components have their style, size, position, and visibility changed in order to better adapt to different screen sizes.
 
 <img src=".github/responsive-layout.png">
 
@@ -46,7 +46,5 @@ With the power of CSS layout features page components have their style, size, po
 
 ## Extra notes
 
-- As a beginner exercise, this project wasn’t focused on advanced optimizations regarding data storage, processing, accessibility, scalability, cross-browser compatibility, etc. There’s still a lot to be done about it.
-- This project was proposed by Rocketseat during one of their free courses.
-- The UI was completely redesigned for this exercise.
-- As most projects, this one is not bug/error-free. If you find any bug or unexpected behavior, feel free to get in touch, here is my email - dfaferreira46@gmail.com
+- This project is purely a practical exercise intended for developing and/or showcasing my skills in the tools/techniques/concepts mentioned above. It's not meant to be a complete production-ready solution. Feel free to reach out if you have any questions or want to chat about it!
+- This exercise was built following lessons by [Rocketseat](https://www.rocketseat.com.br/). It has been completely redesigned by me.
